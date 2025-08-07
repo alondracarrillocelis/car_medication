@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">car_medication</string>
+    <string name="remind_later">⏰ Recordar después</string>
+    <string name="snooze">😴 Posponer</string>
+    <string name="add_reminder">➕ Agregar recordatorio</string>
+    <string name="fun_emoji">💊😃</string>
+    <string name="keep_going">¡Sigue así! 🎉</string>
+    <string name="reminder_toast">¡Te recordaremos en unos minutos! ⏰</string>
+    <string name="snooze_toast">¡Hora de una siesta! 😴 Pospuesto.</string>
+    <string name="add_reminder_toast">¡Agrega un nuevo recordatorio divertido! 🎉</string>
 </resources>
