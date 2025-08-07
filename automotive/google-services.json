@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "113478947185",
+    "project_id": "medications-reminder1",
+    "storage_bucket": "medications-reminder1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113478947185:android:22c14fe8bb12fbd76da6d0",
+        "android_client_info": {
+          "package_name": "com.example.car_medication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeVQ3ZElVebhZaEr3oebTFd3MkovJgiw0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113478947185:android:d5d0c489254cf1226da6d0",
+        "android_client_info": {
+          "package_name": "com.example.phone_medicatios"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeVQ3ZElVebhZaEr3oebTFd3MkovJgiw0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

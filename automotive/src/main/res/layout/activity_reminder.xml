@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ReminderActivity">
+
+    <!-- Emoji divertido para animar la toma de medicinas -->
+    <TextView
+        android:id="@+id/tv_fun_emoji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="💊😃"
+        android:textSize="48sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tv_medicine_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Nombre del medicamento -->
+    <TextView
+        android:id="@+id/tv_medicine_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Paracetamol 500mg"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tv_fun_emoji"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Hora de la toma -->
+    <TextView
+        android:id="@+id/tv_medicine_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="08:00 AM"
+        android:textSize="20sp"
+        android:textColor="#888888"
+        app:layout_constraintTop_toBottomOf="@id/tv_medicine_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Botón Recordar después (izquierda) -->
+    <Button
+        android:id="@+id/btn_remind_later"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="⏰ Recordar después"
+        android:backgroundTint="#FFD600"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_snooze"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_margin="24dp"/>
+
+    <!-- Botón Posponer (derecha) -->
+    <Button
+        android:id="@+id/btn_snooze"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="😴 Posponer"
+        android:backgroundTint="#00E676"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_remind_later"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_margin="24dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout> 
