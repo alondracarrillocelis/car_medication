@@ -4,77 +4,121 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#2C2C2C"
     tools:context=".ReminderActivity">
 
-    <!-- Emoji divertido para animar la toma de medicinas -->
-    <TextView
-        android:id="@+id/tv_fun_emoji"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="💊😃"
-        android:textSize="48sp"
+    <!-- Top Section - Notification Header -->
+    <ImageView
+        android:id="@+id/iv_notification_bell"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/bell"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/tv_medicine_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"/>
+        android:layout_marginTop="32dp"
+        app:tint="#A387B9" />
 
-    <!-- Nombre del medicamento -->
     <TextView
-        android:id="@+id/tv_medicine_name"
-        android:layout_width="0dp"
+        android:id="@+id/tv_header_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Paracetamol 500mg"
+        android:text="¡No olvides tu Medicación!"
+        android:textColor="#FFFFFF"
         android:textSize="32sp"
         android:textStyle="bold"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/tv_fun_emoji"
+        app:layout_constraintTop_toBottomOf="@id/iv_notification_bell"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
-    <!-- Hora de la toma -->
-    <TextView
-        android:id="@+id/tv_medicine_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="08:00 AM"
-        android:textSize="20sp"
-        android:textColor="#888888"
-        app:layout_constraintTop_toBottomOf="@id/tv_medicine_name"
+    <View
+        android:id="@+id/wavy_line_header"
+        android:layout_width="200dp"
+        android:layout_height="4dp"
+        android:background="@drawable/wavy_line_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_header_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
-    <!-- Botón Recordar después (izquierda) -->
-    <Button
-        android:id="@+id/btn_remind_later"
-        android:layout_width="0dp"
+    <!-- Left Sidebar - Action Controls -->
+    <LinearLayout
+        android:id="@+id/left_sidebar"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="⏰ Recordar después"
-        android:backgroundTint="#FFD600"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/wavy_line_header"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_snooze"
-        app:layout_constraintHorizontal_weight="1"
-        android:layout_margin="24dp"/>
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp">
 
-    <!-- Botón Posponer (derecha) -->
-    <Button
-        android:id="@+id/btn_snooze"
+        <!-- Mark as Taken Button -->
+        <FrameLayout
+            android:id="@+id/btn_mark_taken"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/purple_rounded_box"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/taken"
+                android:layout_gravity="center"
+                app:tint="#FFFFFF" />
+        </FrameLayout>
+
+        <!-- Snooze Button -->
+        <FrameLayout
+            android:id="@+id/btn_snooze"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/purple_rounded_box"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/postpon"
+                android:layout_gravity="center"
+                app:tint="#FFFFFF" />
+        </FrameLayout>
+
+        <!-- Add Reminder Button -->
+        <FrameLayout
+            android:id="@+id/btn_add_reminder"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/purple_rounded_box"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_add"
+                android:layout_gravity="center"
+                app:tint="#FFFFFF" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Main Content - Medication List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_medications"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="😴 Posponer"
-        android:backgroundTint="#00E676"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_remind_later"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/wavy_line_header"
+        app:layout_constraintStart_toEndOf="@id/left_sidebar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_weight="1"
-        android:layout_margin="24dp"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="32dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout> 
