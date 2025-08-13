@@ -7,6 +7,12 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.1"
 googleServices = "4.4.3"
+lifecycle = "2.7.0"
+material = "1.11.0"
+activityKtx = "1.9.0"
+coroutines = "1.8.1"
+firebaseUi = "8.0.2"
+work = "2.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -15,11 +21,34 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version = "2.1.4" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+# Lifecycle y ViewModel
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+fragmentKtx = { group = "androidx.fragment", name = "fragment-ktx", version = "1.7.1" }
+
+# Activity KTX (para viewModels())
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityKtx" }
+
+# Coroutines
+coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+# Firebase
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version = "34.0.0" }
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics", version = "21.6.1" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version = "25.0.0" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version = "23.0.0" }
+
+# Firebase UI (opcional para listas)
+firebase-ui-firestore = { group = "com.firebaseui", name = "firebase-ui-firestore", version.ref = "firebaseUi" }
+
+# WorkManager para notificaciones programadas
+work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "work" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" } # ✅
-
+google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }

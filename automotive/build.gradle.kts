@@ -38,25 +38,25 @@ android {
 }
 
 dependencies {
-//    implementation(platform(com.google.firebase:firebase-bom:34.0.0))
-//    implementation(com.google.firebase:firebase-analytics)
-//    implementation(libs.androidx.core.ktx)
-//    implementation(libs.androidx.appcompat)
-//    implementation(libs.constraintlayout)
-//    testImplementation(libs.junit)
-//    androidTestImplementation(libs.androidx.junit)
-//    androidTestImplementation(libs.androidx.espresso.core)
-
-
+    // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
     implementation("com.google.firebase:firebase-firestore")
+
+    // AndroidX core
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.constraintlayout)
     implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("androidx.activity:activity-ktx:1.9.2") // 👈 Necesario para viewModels()
+
+    // ViewModel y Lifecycle
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
+
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
 }
+

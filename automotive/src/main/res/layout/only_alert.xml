@@ -111,17 +111,14 @@
     <!-- Main Content - Medication List -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_medications"
-        android:layout_width="191dp"
-        android:layout_height="401dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.909"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/wavy_line_header"
-        app:layout_constraintVertical_bias="0.37" />
-
+        app:layout_constraintStart_toEndOf="@id/left_sidebar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="32dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

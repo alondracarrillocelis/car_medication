@@ -1,46 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="16dp">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nombre del Medicamento"
-        android:textColor="#333333"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"/>
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-    <EditText
-        android:id="@+id/et_medication_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ej: Paracetamol, Ibuprofeno..."
-        android:inputType="text"
-        android:padding="16dp"
-        android:background="@drawable/gray_rounded_box"
-        android:layout_marginBottom="16dp"/>
+        <!-- Nombre -->
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del medicamento"
+            android:inputType="textCapWords"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hora del Recordatorio"
-        android:textColor="#333333"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"/>
+        <!-- Dosis -->
+        <EditText
+            android:id="@+id/etDosage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dosis"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:drawable/edit_text" />
 
-    <EditText
-        android:id="@+id/et_medication_time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="HH:MM"
-        android:inputType="time"
-        android:padding="16dp"
-        android:background="@drawable/gray_rounded_box"
-        android:layout_marginBottom="8dp"/>
+        <!-- Unidad -->
+        <EditText
+            android:id="@+id/etUnit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Unidad (mg, ml, etc.)"
+            android:inputType="text"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:drawable/edit_text" />
 
-</LinearLayout>
+        <!-- Tipo -->
+        <EditText
+            android:id="@+id/etType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tipo (Tableta, Jarabe, etc.)"
+            android:inputType="textCapWords"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:drawable/edit_text" />
+
+        <!-- Instrucciones -->
+        <EditText
+            android:id="@+id/etInstructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Instrucciones"
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:drawable/edit_text" />
+
+        <!-- Frecuencia -->
+        <EditText
+            android:id="@+id/etFrequency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Frecuencia (cada X horas)"
+            android:inputType="number"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:drawable/edit_text" />
+
+        <!-- Primera hora -->
+        <EditText
+            android:id="@+id/etFirstHour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Primera hora"
+            android:focusable="false"
+            android:clickable="true"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:drawable/edit_text" />
+
+        <!-- Segunda hora -->
+        <EditText
+            android:id="@+id/etSecondHour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Segunda hora"
+            android:focusable="false"
+            android:clickable="true"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:drawable/edit_text" />
+
+        <!-- Selección de días -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Días de la semana"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp" />
+
+        <GridLayout
+            android:id="@+id/daysGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:layout_marginTop="4dp">
+
+            <CheckBox android:id="@+id/cbMonday" android:text="Lunes" />
+            <CheckBox android:id="@+id/cbTuesday" android:text="Martes" />
+            <CheckBox android:id="@+id/cbWednesday" android:text="Miércoles" />
+            <CheckBox android:id="@+id/cbThursday" android:text="Jueves" />
+            <CheckBox android:id="@+id/cbFriday" android:text="Viernes" />
+            <CheckBox android:id="@+id/cbSaturday" android:text="Sábado" />
+            <CheckBox android:id="@+id/cbSunday" android:text="Domingo" />
+        </GridLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#673AB7"
+            android:text="Guardar"
+            android:textColor="#070707"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>

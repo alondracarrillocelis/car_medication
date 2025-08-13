@@ -1,70 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp"
-    android:background="@android:color/transparent">
+    android:orientation="vertical"
+    android:padding="12dp">
 
-    <!-- Right Arrow -->
-    <ImageView
-        android:id="@+id/iv_arrow"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/indicator_line"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:tint="#FFFFFF" />
-
-    <!-- Medication Name -->
     <TextView
-        android:id="@+id/tv_medication_name"
-        android:layout_width="0dp"
+        android:id="@+id/tv_med_name"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Desvenlafaxina"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:text="Nombre"
         android:textStyle="bold"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintStart_toEndOf="@id/iv_arrow"
-        app:layout_constraintEnd_toStartOf="@id/iv_pill_icon"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:textSize="16sp" />
 
-    <!-- Pill Icon -->
-    <ImageView
-        android:id="@+id/iv_pill_icon"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/one_pill"
-        app:layout_constraintEnd_toStartOf="@id/iv_minus_circle"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginEnd="16dp"
-        app:tint="#FFFFFF" />
+    <TextView
+        android:id="@+id/tv_med_dose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dosis" />
 
-    <!-- Minus Circle -->
-    <ImageView
-        android:id="@+id/iv_minus_circle"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/one_pill"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:tint="#FFFFFF" />
-
-    <!-- Wavy Separator Line -->
-    <View
-        android:id="@+id/wavy_separator"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:background="@drawable/divider_line"
-        app:layout_constraintTop_toBottomOf="@id/iv_arrow"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout> 
+    <TextView
+        android:id="@+id/tv_med_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hora" />
+</LinearLayout>
