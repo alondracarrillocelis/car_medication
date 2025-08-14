@@ -2,13 +2,16 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#2C2C2C">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:padding="12dp"
+        android:background="@drawable/form_shape">
 
         <!-- Nombre -->
         <EditText
@@ -106,7 +109,8 @@
             android:layout_height="wrap_content"
             android:text="Días de la semana"
             android:textStyle="bold"
-            android:layout_marginTop="12dp" />
+            android:layout_marginTop="12dp"
+            android:textColor="#FFFFFF" />
 
         <GridLayout
             android:id="@+id/daysGrid"
@@ -115,13 +119,13 @@
             android:columnCount="2"
             android:layout_marginTop="4dp">
 
-            <CheckBox android:id="@+id/cbMonday" android:text="Lunes" />
-            <CheckBox android:id="@+id/cbTuesday" android:text="Martes" />
-            <CheckBox android:id="@+id/cbWednesday" android:text="Miércoles" />
-            <CheckBox android:id="@+id/cbThursday" android:text="Jueves" />
-            <CheckBox android:id="@+id/cbFriday" android:text="Viernes" />
-            <CheckBox android:id="@+id/cbSaturday" android:text="Sábado" />
-            <CheckBox android:id="@+id/cbSunday" android:text="Domingo" />
+            <CheckBox android:id="@+id/cbMonday" android:text="Lunes" android:textColor="#FFFFFF"/>
+            <CheckBox android:id="@+id/cbTuesday" android:text="Martes" android:textColor="#FFFFFF"/>
+            <CheckBox android:id="@+id/cbWednesday" android:text="Miércoles" android:textColor="#FFFFFF"/>
+            <CheckBox android:id="@+id/cbThursday" android:text="Jueves" android:textColor="#FFFFFF"/>
+            <CheckBox android:id="@+id/cbFriday" android:text="Viernes" android:textColor="#FFFFFF"/>
+            <CheckBox android:id="@+id/cbSaturday" android:text="Sábado" android:textColor="#FFFFFF"/>
+            <CheckBox android:id="@+id/cbSunday" android:text="Domingo" android:textColor="#FFFFFF"/>
         </GridLayout>
 
         <Button
@@ -129,9 +133,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="#673AB7"
+            android:background="#A98CC0"
             android:text="Guardar"
-            android:textColor="#070707"
+            android:textColor="#FFFFFF"
             android:textStyle="bold" />
 
     </LinearLayout>

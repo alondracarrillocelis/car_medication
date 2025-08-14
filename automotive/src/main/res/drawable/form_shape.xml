@@ -1,0 +1,22 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Fondo gris oscuro -->
+    <solid android:color="#2C2C2C" />
+
+    <!-- Borde blanco -->
+    <stroke
+        android:width="2dp"
+        android:color="#FFFFFF" />
+
+    <!-- Esquinas redondeadas -->
+    <corners android:radius="8dp" />
+
+    <!-- Margen interno del contenido -->
+    <padding
+        android:left="8dp"
+        android:top="8dp"
+        android:right="8dp"
+        android:bottom="8dp" />
+
+</shape>
