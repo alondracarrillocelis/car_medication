@@ -3,140 +3,315 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp"
-    android:background="#2C2C2C">
+    android:background="@drawable/gradient_background">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:padding="12dp"
-        android:background="@drawable/form_shape">
+        android:padding="16dp">
 
-        <!-- Nombre -->
-        <EditText
-            android:id="@+id/etName"
+        <!-- Indicador de Progreso -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre del medicamento"
-            android:inputType="textCapWords"
-            android:padding="12dp"
-            android:background="@android:drawable/edit_text" />
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/progress_background"
+            android:padding="12dp">
 
-        <!-- Dosis -->
-        <EditText
-            android:id="@+id/etDosage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Dosis"
-            android:inputType="numberDecimal"
-            android:padding="12dp"
-            android:layout_marginTop="8dp"
-            android:background="@android:drawable/edit_text" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_green"
+                android:layout_marginEnd="6dp"
+                android:elevation="2dp" />
 
-        <!-- Unidad -->
-        <EditText
-            android:id="@+id/etUnit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Unidad (mg, ml, etc.)"
-            android:inputType="text"
-            android:padding="12dp"
-            android:layout_marginTop="8dp"
-            android:background="@android:drawable/edit_text" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_orange"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                android:elevation="2dp" />
 
-        <!-- Tipo -->
-        <EditText
-            android:id="@+id/etType"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tipo (Tableta, Jarabe, etc.)"
-            android:inputType="textCapWords"
-            android:padding="12dp"
-            android:layout_marginTop="8dp"
-            android:background="@android:drawable/edit_text" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_purple"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                android:elevation="2dp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_blue"
+                android:layout_marginStart="6dp"
+                android:elevation="2dp" />
+        </LinearLayout>
 
         <!-- Instrucciones -->
-        <EditText
-            android:id="@+id/etInstructions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Instrucciones"
-            android:inputType="textMultiLine"
-            android:minLines="2"
-            android:padding="12dp"
-            android:layout_marginTop="8dp"
-            android:background="@android:drawable/edit_text" />
-
-        <!-- Frecuencia -->
-        <EditText
-            android:id="@+id/etFrequency"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Frecuencia (cada X horas)"
-            android:inputType="number"
-            android:padding="12dp"
-            android:layout_marginTop="8dp"
-            android:background="@android:drawable/edit_text" />
-
-        <!-- Primera hora -->
-        <EditText
-            android:id="@+id/etFirstHour"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Primera hora"
-            android:focusable="false"
-            android:clickable="true"
-            android:padding="12dp"
-            android:layout_marginTop="8dp"
-            android:background="@android:drawable/edit_text" />
-
-        <!-- Segunda hora -->
-        <EditText
-            android:id="@+id/etSecondHour"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Segunda hora"
-            android:focusable="false"
-            android:clickable="true"
-            android:padding="12dp"
-            android:layout_marginTop="8dp"
-            android:background="@android:drawable/edit_text" />
-
-        <!-- Selección de días -->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Días de la semana"
-            android:textStyle="bold"
-            android:layout_marginTop="12dp"
-            android:textColor="#FFFFFF" />
-
-        <GridLayout
-            android:id="@+id/daysGrid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:layout_marginTop="4dp">
+            android:text="✨ Completa todos los campos para crear tu recordatorio ✨"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/instructions_background"
+            android:padding="16dp"
+            android:elevation="4dp"
+            android:textStyle="bold" />
 
-            <CheckBox android:id="@+id/cbMonday" android:text="Lunes" android:textColor="#FFFFFF"/>
-            <CheckBox android:id="@+id/cbTuesday" android:text="Martes" android:textColor="#FFFFFF"/>
-            <CheckBox android:id="@+id/cbWednesday" android:text="Miércoles" android:textColor="#FFFFFF"/>
-            <CheckBox android:id="@+id/cbThursday" android:text="Jueves" android:textColor="#FFFFFF"/>
-            <CheckBox android:id="@+id/cbFriday" android:text="Viernes" android:textColor="#FFFFFF"/>
-            <CheckBox android:id="@+id/cbSaturday" android:text="Sábado" android:textColor="#FFFFFF"/>
-            <CheckBox android:id="@+id/cbSunday" android:text="Domingo" android:textColor="#FFFFFF"/>
-        </GridLayout>
+        <!-- Paso 1: Información básica -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="@drawable/form_step_shape"
+            android:layout_marginBottom="12dp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📝 Paso 1: Información básica"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre del medicamento *"
+                android:inputType="textCapWords"
+                android:padding="12dp"
+                android:background="@drawable/input_shape" />
+
+            <EditText
+                android:id="@+id/etType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tipo (Tableta, Jarabe, etc.)"
+                android:inputType="textCapWords"
+                android:padding="12dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_shape" />
+        </LinearLayout>
+
+        <!-- Paso 2: Dosis e instrucciones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="@drawable/form_step_shape"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💊 Paso 2: Dosis e instrucciones"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <EditText
+                    android:id="@+id/etDosage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Dosis *"
+                    android:inputType="numberDecimal"
+                    android:padding="12dp"
+                    android:background="@drawable/input_shape" />
+
+                <EditText
+                    android:id="@+id/etUnit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Unidad (mg, ml, etc.) *"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/input_shape" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etInstructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Instrucciones (opcional)"
+                android:inputType="textMultiLine"
+                android:minLines="2"
+                android:padding="12dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_shape" />
+        </LinearLayout>
+
+        <!-- Paso 3: Horarios -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="@drawable/form_step_shape"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🕐 Paso 3: Horarios"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etFrequency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Frecuencia (veces al día) *"
+                android:inputType="number"
+                android:padding="12dp"
+                android:background="@drawable/input_shape" />
+
+            <EditText
+                android:id="@+id/etFirstHour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Primera hora * (toca para seleccionar)"
+                android:focusable="false"
+                android:clickable="true"
+                android:padding="12dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_shape" />
+
+            <EditText
+                android:id="@+id/etEndDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_shape"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="Fecha de Término * (toca para seleccionar)"
+                android:padding="12dp" />
+        </LinearLayout>
+
+        <!-- Paso 4: Días -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="@drawable/form_step_shape">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📅 Paso 4: Selección de días"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selecciona los días en que debes tomar el medicamento:"
+                android:textColor="#CCCCCC"
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp" />
+
+            <GridLayout
+                android:id="@+id/daysGrid"
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:layout_marginTop="4dp"
+                android:columnCount="2">
+
+                <CheckBox
+                    android:id="@+id/cbMonday"
+                    android:text="Lunes"
+                    android:textColor="#FFFFFF" />
+
+                <CheckBox
+                    android:id="@+id/cbTuesday"
+                    android:text="Martes"
+                    android:textColor="#FFFFFF" />
+
+                <CheckBox
+                    android:id="@+id/cbWednesday"
+                    android:text="Miércoles"
+                    android:textColor="#FFFFFF" />
+
+                <CheckBox
+                    android:id="@+id/cbThursday"
+                    android:text="Jueves"
+                    android:textColor="#FFFFFF" />
+
+                <CheckBox
+                    android:id="@+id/cbFriday"
+                    android:text="Viernes"
+                    android:textColor="#FFFFFF" />
+
+                <CheckBox
+                    android:id="@+id/cbSaturday"
+                    android:text="Sábado"
+                    android:textColor="#FFFFFF" />
+
+                <CheckBox
+                    android:id="@+id/cbSunday"
+                    android:text="Domingo"
+                    android:textColor="#FFFFFF" />
+            </GridLayout>
+        </LinearLayout>
+
+        <!-- Botón guardar -->
         <Button
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="#A98CC0"
-            android:text="Guardar"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/gradient_button"
+            android:text="💾 Guardar Recordatorio"
             android:textColor="#FFFFFF"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:elevation="6dp"
+            android:stateListAnimator="@null" />
+
+        <!-- Mensaje de ayuda -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💡 * Campos obligatorios\nCompleta todos los campos marcados con * para poder guardar"
+            android:textColor="#E0E0E0"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/help_background"
+            android:padding="12dp"
+            android:elevation="2dp" />
 
     </LinearLayout>
 </ScrollView>
